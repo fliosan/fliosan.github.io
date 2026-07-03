@@ -508,6 +508,21 @@
   }, { threshold: 0.15 });
   contactIO.observe($("#contact"));
 
+  /* ---------- platform-aware store links: Android/Windows visitors get Google Play ---------- */
+  const isApple = /iPhone|iPad|iPod|Macintosh/i.test(navigator.userAgent);
+  const prefersPlay = !isApple && /Android|Windows|Linux/i.test(navigator.userAgent);
+  if (prefersPlay) {
+    $$("a[data-play]").forEach((a) => {
+      if (!a.dataset.play) return;
+      a.href = a.dataset.play;
+      $$(".store-open, .lib-meta", a).concat(a.matches(".lib-meta") ? [a] : []).forEach((el) => {
+        el.textContent = el.textContent
+          .replace("VIEW ON THE APP STORE", "VIEW ON GOOGLE PLAY")
+          .replace("APP STORE", "GOOGLE PLAY");
+      });
+    });
+  }
+
   /* ---------- screenshot rails: drag to scroll ---------- */
   $$(".shot-rail").forEach((rail) => {
     $$("img", rail).forEach((img) => (img.draggable = false));

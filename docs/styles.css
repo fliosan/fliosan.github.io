@@ -640,6 +640,9 @@ body.paused .marquee-track, body.paused .chapter.playing * { animation-play-stat
 .lib-text small { display: block; color: var(--text-2); font-size: 12.5px; line-height: 1.45; margin-top: 4px; }
 .lib-text small b { display: inline; font-size: inherit; color: var(--text); }
 .lib-meta { display: block; font-size: 9.5px; letter-spacing: 0.08em; color: #FF9F0A; margin-top: 9px; }
+.lib-links { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.lib-links .lib-meta { color: var(--text-3); transition: color 0.25s; }
+.lib-links .lib-meta:hover { color: var(--lime); }
 .lib-tile .lib-meta { color: var(--text-3); }
 .lib-tile:hover .lib-meta { color: var(--lime); }
 
