@@ -708,7 +708,15 @@ body.paused .marquee-track, body.paused .chapter.playing * { animation-play-stat
 .s-row.on .s-toggle::after { transform: translateX(20px); }
 
 .platform-glyphs { display: flex; flex-wrap: wrap; gap: 9px; }
-.pg { font-size: 13px; color: var(--text-2); border: 1px solid var(--hairline); border-radius: 100px; padding: 8px 15px; }
+.pg {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--text-2);
+  border: 1px solid var(--hairline); border-radius: 100px; padding: 8px 15px;
+  transition: border-color 0.25s, color 0.25s;
+}
+.pg svg { width: 15px; height: 15px; flex-shrink: 0; color: var(--text-2); transition: color 0.25s; }
+.pg:hover { border-color: color-mix(in srgb, var(--lime) 45%, transparent); color: var(--text); }
+.pg:hover svg { color: var(--lime); }
 
 /* ============================================================
    06 · ANALYTICS
