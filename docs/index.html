@@ -92,8 +92,8 @@
               <p class="hs-greeting mono">// 30+ apps shipped — a few of them:</p>
               <div class="hs-grid">
                 <a class="hs-icon" href="#ch-dokon" style="--ico:#FF5C38"><span class="hs-glyph"><img src="/assets/apps/dokon-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">Dokon</span></a>
-                <a class="hs-icon" href="#ch-hometasker" style="--ico:#30D158"><span class="hs-glyph"><img src="/assets/apps/hometasker-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">HomeTasker</span></a>
-                <a class="hs-icon" href="#ch-nasiyah" style="--ico:#2DD4BF"><span class="hs-glyph"><img src="/assets/apps/nasiyah-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">Nasiyah</span></a>
+                <a class="hs-icon" href="#ch-hometasker" style="--ico:#00BB8B"><span class="hs-glyph"><img src="/assets/apps/hometasker-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">HomeTasker</span></a>
+                <a class="hs-icon" href="#ch-nasiyah" style="--ico:#079455"><span class="hs-glyph"><img src="/assets/apps/nasiyah-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">Nasiyah</span></a>
                 <a class="hs-icon" href="#ch-daylist" style="--ico:#0A84FF"><span class="hs-glyph"><img src="/assets/apps/daylist-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">Daylist</span></a>
                 <a class="hs-icon" href="#ch-ustabor" style="--ico:#FFB020"><span class="hs-glyph"><img src="/assets/apps/ustabor-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">Ustabor</span></a>
                 <a class="hs-icon" href="#library" style="--ico:#88C0FF"><span class="hs-glyph"><img src="/assets/apps/zms-icon.webp" alt="" width="54" height="54"></span><span class="hs-label">ZMS ELD</span></a>
@@ -233,7 +233,7 @@
     </article>
 
     <!-- HOMETASKER -->
-    <article class="chapter chapter-flip" id="ch-hometasker" style="--app:#30D158" data-island="HomeTasker" data-widget="Row">
+    <article class="chapter chapter-flip" id="ch-hometasker" style="--app:#00BB8B" data-island="HomeTasker" data-widget="Row">
       <div class="chapter-copy">
         <p class="kicker mono">02 · WIDGETS &amp; WEARABLES</p>
         <h3 class="split">HomeTasker</h3>
@@ -250,25 +250,20 @@
               <svg class="sb-icons" width="46" height="12" viewBox="0 0 46 12"><g fill="currentColor"><rect x="0" y="7" width="2.5" height="4" rx="0.7"/><rect x="4" y="5" width="2.5" height="6" rx="0.7"/><rect x="8" y="3" width="2.5" height="8" rx="0.7"/><rect x="12" y="1" width="2.5" height="10" rx="0.7"/><path d="M20 6.5a6 6 0 0 1 8.4 0l-1.3 1.3a4.2 4.2 0 0 0-5.8 0zM22.3 8.8a2.8 2.8 0 0 1 3.8 0L24.2 11z"/><rect x="33" y="2.5" width="10.5" height="7" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="4" width="6" height="4" rx="1"/><rect x="44.2" y="4.8" width="1.6" height="2.4" rx="0.8"/></g></svg>
             </div>
             <div class="ht-widgets">
-              <div class="widget widget-tasks">
-                <p class="widget-title">Today</p>
+              <div class="widget w-med">
+                <div class="w-head"><span><b>15 Chores for Today</b><small>My Home</small></span><i class="w-plus" aria-hidden="true">+</i></div>
                 <ul>
-                  <li class="t1"><i aria-hidden="true"></i><span>Buy groceries</span></li>
-                  <li class="t2"><i aria-hidden="true"></i><span>Water the plants</span></li>
-                  <li class="t3"><i aria-hidden="true"></i><span>Fix the sink</span></li>
+                  <li class="t1"><i aria-hidden="true"></i><div><span>Wash the dishes</span><small>Kitchen</small></div></li>
+                  <li class="t2"><i aria-hidden="true"></i><div><span>Water the plants</span><small>Living Room</small></div></li>
                 </ul>
               </div>
-              <div class="widget widget-ring">
-                <svg viewBox="0 0 64 64" aria-hidden="true">
-                  <circle class="ring-bg" cx="32" cy="32" r="26"/>
-                  <circle class="ring-fg" cx="32" cy="32" r="26"/>
-                </svg>
-                <p><b class="ring-count">2</b>/3 done</p>
+              <div class="widget w-sm">
+                <div class="w-head"><span><b>Today</b><small>My Home</small></span><i class="w-cnt">3</i></div>
+                <ul><li class="t3"><i aria-hidden="true"></i><div><span>Fix the sink</span><small>Bathroom</small></div></li></ul>
               </div>
-              <div class="widget widget-cal">
-                <p class="cal-day mono">WED</p>
-                <p class="cal-date">2</p>
-                <p class="cal-ev">Standup · 10:00</p>
+              <div class="widget w-sm w-empty">
+                <div class="w-head"><span><b>Today</b><small>My Home</small></span><i class="w-cnt zero">0</i></div>
+                <p class="w-yay">🌟 Hooray! No chores left for today.</p>
               </div>
             </div>
             <div class="ht-icons" aria-hidden="true">
@@ -283,15 +278,12 @@
           <div class="watch-case">
             <div class="watch-crown"></div><div class="watch-sidebtn"></div>
             <div class="watch-screen">
-              <p class="watch-time mono">9:41</p>
-              <svg class="watch-rings" viewBox="0 0 100 100">
-                <circle class="wring wring-bg1" cx="50" cy="54" r="34"/>
-                <circle class="wring wring-fg1" cx="50" cy="54" r="34"/>
-                <circle class="wring wring-bg2" cx="50" cy="54" r="24"/>
-                <circle class="wring wring-fg2" cx="50" cy="54" r="24"/>
-                <circle class="wring wring-bg3" cx="50" cy="54" r="14"/>
-                <circle class="wring wring-fg3" cx="50" cy="54" r="14"/>
-              </svg>
+              <p class="watch-time mono">10:09</p>
+              <p class="watch-title">My Home</p>
+              <div class="wbtn wb-today"><span>Today</span><b class="wcnt"><span class="n1">5</span><span class="n2">3</span></b><i>›</i></div>
+              <div class="wbtn wb-all"><span>All Tasks</span><b>34</b><i>›</i></div>
+              <div class="wbtn wb-done"><span>Completed</span></div>
+              <span class="watch-fab"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><path d="M4 11 12 4l8 7v8h-5v-5h-6v5H4z"/></svg></span>
             </div>
           </div>
           <div class="watch-band watch-band-bottom"></div>
@@ -317,7 +309,7 @@
     </article>
 
     <!-- NASIYAH -->
-    <article class="chapter" id="ch-nasiyah" style="--app:#2DD4BF" data-island="Nasiyah" data-widget="Column">
+    <article class="chapter" id="ch-nasiyah" style="--app:#079455" data-island="Nasiyah" data-widget="Column">
       <div class="chapter-copy">
         <p class="kicker mono">03 · FINTECH / BNPL <span class="solo-tag">SOLO BUILD</span></p>
         <h3 class="split">Nasiyah</h3>
@@ -330,26 +322,35 @@
       <div class="chapter-stage">
         <div class="ghost-phone ghost-a" aria-hidden="true"><span class="mono">Business app</span></div>
         <div class="phone demo-phone" role="img" aria-label="Animated demo of the Nasiyah buy-now-pay-later app: installments being paid off">
-          <div class="phone-screen app-screen nas-screen">
+          <div class="phone-screen app-screen light nas-screen">
             <div class="demo-statusbar"><span class="demo-time">9:41</span>
               <svg class="sb-icons" width="46" height="12" viewBox="0 0 46 12"><g fill="currentColor"><rect x="0" y="7" width="2.5" height="4" rx="0.7"/><rect x="4" y="5" width="2.5" height="6" rx="0.7"/><rect x="8" y="3" width="2.5" height="8" rx="0.7"/><rect x="12" y="1" width="2.5" height="10" rx="0.7"/><path d="M20 6.5a6 6 0 0 1 8.4 0l-1.3 1.3a4.2 4.2 0 0 0-5.8 0zM22.3 8.8a2.8 2.8 0 0 1 3.8 0L24.2 11z"/><rect x="33" y="2.5" width="10.5" height="7" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="4" width="6" height="4" rx="1"/><rect x="44.2" y="4.8" width="1.6" height="2.4" rx="0.8"/></g></svg>
             </div>
-            <div class="nas-head">
-              <p class="nas-brand">Nasiyah</p>
-              <p class="nas-limit mono">Available limit · 8 000 000 UZS</p>
-              <div class="limit-bar"><i></i></div>
+            <p class="nas-title">Оплаты</p>
+            <div class="nas-seg" aria-hidden="true"><span class="seg on">Ближайшие <i>+9</i></span><span class="seg">История</span></div>
+            <div class="nas-search" aria-hidden="true"><span class="nas-input">⌕&nbsp; Поиск</span><span class="nas-fbtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"/></svg></span></div>
+            <div class="nas-card">
+              <span class="nas-chip"><i></i>Ближайший</span>
+              <div class="nas-grid">
+                <span class="nas-lbl">Договор №:</span><span class="nas-lbl r">Остаток долга:</span>
+                <b>2410JAK0001-CA</b><b class="r">$ 14 300</b>
+              </div>
+              <p class="nas-item">Машина - Malibu 2</p>
+              <div class="nas-bar"><i></i></div>
+              <p class="nas-cnt"><span class="c1">2/12</span><span class="c2">3/12</span></p>
+              <div class="nas-grid">
+                <span class="nas-lbl">Дата платежа:</span><span class="nas-lbl r">Сумма платежа:</span>
+                <b class="nas-date">15.11.2024 <em>(осталось - 4 дня)</em></b><b class="r">$ 150</b>
+              </div>
+              <span class="nas-pay">Совершить оплату&ensp;✓</span>
+              <span class="nas-ok">Подтверждено · 15.11.2024 - 21:23</span>
             </div>
-            <div class="nas-purchase">
-              <span class="nas-ico" aria-hidden="true">📺</span>
-              <span><b>Samsung TV 55″</b><small>6 400 000 UZS · 4 payments</small></span>
-            </div>
-            <ul class="nas-schedule">
-              <li class="p1"><span>1 600 000 · July</span><i class="pay-check" aria-hidden="true"></i></li>
-              <li class="p2"><span>1 600 000 · August</span><i class="pay-check" aria-hidden="true"></i></li>
-              <li class="p3"><span>1 600 000 · September</span><i class="pay-check" aria-hidden="true"></i></li>
-              <li class="p4"><span>1 600 000 · October</span><i class="pay-check" aria-hidden="true"></i></li>
-            </ul>
-            <p class="nas-status mono">autopay · on time · 0% overdue</p>
+            <nav class="nas-nav" aria-hidden="true">
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7v9h-6v-6h-6v6H3z"/></svg><small>Главная</small></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4h10l3 4H4zM4 8v12h16V8M9 12h6"/></svg><small>Договора</small></span>
+              <span class="on"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg><small>Оплаты</small><i class="dot"></i></span>
+              <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 5h16v14H4zM4 13h5l2 3h2l2-3h5"/></svg><small>Входящие</small></span>
+            </nav>
           </div>
           <div class="home-indicator" aria-hidden="true"></div>
         </div>
@@ -374,7 +375,7 @@
     </article>
 
     <!-- DAYLIST -->
-    <article class="chapter chapter-flip" id="ch-daylist" style="--app:#0A84FF" data-island="Daylist" data-widget="ListView">
+    <article class="chapter chapter-flip" id="ch-daylist" style="--app:#007AFF" data-island="Daylist" data-widget="ListView">
       <div class="chapter-copy">
         <p class="kicker mono">04 · PRODUCTIVITY <span class="solo-tag">SOLO BUILD</span></p>
         <h3 class="split">Daylist</h3>
@@ -386,20 +387,21 @@
       </div>
       <div class="chapter-stage">
         <div class="phone demo-phone" role="img" aria-label="Animated demo of the Daylist reminders app: tasks completing and Siri adding a reminder">
-          <div class="phone-screen app-screen dl-screen">
+          <div class="phone-screen app-screen light dl-screen">
             <div class="demo-statusbar"><span class="demo-time">9:41</span>
               <svg class="sb-icons" width="46" height="12" viewBox="0 0 46 12"><g fill="currentColor"><rect x="0" y="7" width="2.5" height="4" rx="0.7"/><rect x="4" y="5" width="2.5" height="6" rx="0.7"/><rect x="8" y="3" width="2.5" height="8" rx="0.7"/><rect x="12" y="1" width="2.5" height="10" rx="0.7"/><path d="M20 6.5a6 6 0 0 1 8.4 0l-1.3 1.3a4.2 4.2 0 0 0-5.8 0zM22.3 8.8a2.8 2.8 0 0 1 3.8 0L24.2 11z"/><rect x="33" y="2.5" width="10.5" height="7" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="4" width="6" height="4" rx="1"/><rect x="44.2" y="4.8" width="1.6" height="2.4" rx="0.8"/></g></svg>
             </div>
-            <p class="dl-title">Today <span class="mono dl-count">4</span></p>
+            <div class="dl-nav" aria-hidden="true"><span class="dl-back">‹ Back</span><b>Groceries</b><span class="dl-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="15.5" r="2.6"/></svg><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="8" cy="12" r="0.8" fill="currentColor"/><circle cx="12" cy="12" r="0.8" fill="currentColor"/><circle cx="16" cy="12" r="0.8" fill="currentColor"/></svg></span></div>
+            <div class="dl-prog" aria-hidden="true"><i></i></div>
             <ul class="dl-list">
-              <li class="d1"><i aria-hidden="true"></i><span>Call the bank</span></li>
-              <li class="d2"><i aria-hidden="true"></i><span>Gym at 18:00</span></li>
-              <li class="d3"><i aria-hidden="true"></i><span>Book flights to Samarkand</span></li>
-              <li class="d4 dl-new"><i aria-hidden="true"></i><span>Reply to Shahzod ✦</span></li>
+              <li class="d1"><i aria-hidden="true"></i><div><span>Red apples</span></div></li>
+              <li class="d2 rich"><i aria-hidden="true"></i><div><span>Buy milk</span><small>2% reduced fat, the glass bottle</small><em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>Today 18:00</em></div><b class="dl-av" aria-hidden="true">A</b></li>
+              <li class="d3"><i aria-hidden="true"></i><div><span>Wash the fruits</span></div></li>
+              <li class="d4 dl-new"><i aria-hidden="true"></i><div><span>Order drinking water</span></div></li>
             </ul>
             <div class="dl-siri">
               <div class="siri-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-              <p class="mono">“Hey Siri, add a reminder…”</p>
+              <p class="mono">“Hey Siri, add to Groceries…”</p>
             </div>
           </div>
           <div class="home-indicator" aria-hidden="true"></div>
