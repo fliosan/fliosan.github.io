@@ -234,60 +234,69 @@
 
     function drawMap(now) {
       if (!W) sizeMap();
-      ctx.clearRect(0, 0, W, H);
+      // light map base (real Dokon design)
+      ctx.fillStyle = "#F5F3EC";
+      ctx.fillRect(0, 0, W, H);
 
-      // street grid
-      ctx.strokeStyle = "rgba(255,255,255,0.055)";
-      ctx.lineWidth = 1;
-      for (let x = 0.12; x < 1; x += 0.247) {
-        ctx.beginPath(); ctx.moveTo(x * W, 0); ctx.lineTo(x * W, H); ctx.stroke();
-      }
-      for (let y = 0.12; y < 1; y += 0.18) {
-        ctx.beginPath(); ctx.moveTo(0, y * H); ctx.lineTo(W, y * H); ctx.stroke();
-      }
-      // a couple of "blocks"
-      ctx.fillStyle = "rgba(255,255,255,0.035)";
-      [[0.18, 0.32, 0.14, 0.16], [0.46, 0.68, 0.12, 0.14], [0.68, 0.1, 0.16, 0.1]].forEach(([x, y, w, h]) =>
-        ctx.fillRect(x * W, y * H, w * W, h * H));
+      // city blocks
+      ctx.fillStyle = "#E9E5D9";
+      [[0.05, 0.08, 0.2, 0.18], [0.32, 0.05, 0.22, 0.14], [0.62, 0.1, 0.24, 0.16],
+       [0.08, 0.38, 0.18, 0.2], [0.55, 0.42, 0.2, 0.16], [0.3, 0.62, 0.22, 0.18],
+       [0.68, 0.68, 0.2, 0.16], [0.06, 0.72, 0.16, 0.14]].forEach(([x, y, w, h]) => {
+        ctx.beginPath();
+        ctx.roundRect(x * W, y * H, w * W, h * H, 4);
+        ctx.fill();
+      });
+
+      // streets: casing + white fill
+      const streets = () => {
+        ctx.beginPath();
+        for (let x = 0.12; x < 1; x += 0.247) { ctx.moveTo(x * W - 0.06 * W, 0); ctx.lineTo(x * W + 0.06 * W, H); }
+        for (let y = 0.18; y < 1; y += 0.2) { ctx.moveTo(0, y * H); ctx.lineTo(W, y * H + 0.04 * H); }
+        ctx.stroke();
+      };
+      ctx.strokeStyle = "#DDD8C9"; ctx.lineWidth = 5; streets();
+      ctx.strokeStyle = "#FFFFFF"; ctx.lineWidth = 3.4; streets();
 
       // route
-      ctx.strokeStyle = "rgba(255,92,56,0.9)";
-      ctx.lineWidth = 3;
+      ctx.strokeStyle = "#FF8200";
+      ctx.lineWidth = 2.6;
       ctx.lineJoin = "round";
       ctx.lineCap = "round";
-      ctx.setLineDash([1, 0]);
       ctx.beginPath();
       ROUTE.forEach(([x, y], i) => (i ? ctx.lineTo(x * W, y * H) : ctx.moveTo(x * W, y * H)));
       ctx.stroke();
 
-      // destination pin (pulsing)
+      const pin = (x, y, emoji, pulse) => {
+        if (pulse !== undefined) {
+          ctx.beginPath();
+          ctx.arc(x, y, 10 + pulse * 6, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(255,130,0,${0.18 - pulse * 0.12})`;
+          ctx.fill();
+        }
+        ctx.beginPath();
+        ctx.arc(x, y, 9, 0, Math.PI * 2);
+        ctx.fillStyle = "#fff";
+        ctx.fill();
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = "#FF8200";
+        ctx.stroke();
+        ctx.font = "9px system-ui";
+        ctx.textAlign = "center";
+        ctx.textBaseline = "middle";
+        ctx.fillText(emoji, x, y + 0.5);
+      };
+
+      // destination (house pin, pulsing)
       const [dx, dy] = ROUTE[ROUTE.length - 1];
       const pulse = RM ? 0.5 : (Math.sin(now / 400) + 1) / 2;
-      ctx.beginPath();
-      ctx.arc(dx * W, dy * H, 10 + pulse * 6, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(255,92,56,${0.16 - pulse * 0.1})`;
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(dx * W, dy * H, 5.5, 0, Math.PI * 2);
-      ctx.fillStyle = "#FF5C38";
-      ctx.fill();
+      pin(dx * W, dy * H, "🏠", pulse);
 
-      // courier
+      // courier (scooter pin, moving)
       const p = RM ? 0.55 : ((now - t0) % 7000) / 7000;
       const eased = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
       const [cx, cy] = pointAt(eased);
-      ctx.beginPath();
-      ctx.arc(cx * W, cy * H, 11, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(255,92,56,0.22)";
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(cx * W, cy * H, 6, 0, Math.PI * 2);
-      ctx.fillStyle = "#fff";
-      ctx.fill();
-      ctx.beginPath();
-      ctx.arc(cx * W, cy * H, 4, 0, Math.PI * 2);
-      ctx.fillStyle = "#FF5C38";
-      ctx.fill();
+      pin(cx * W, cy * H, "🛵");
     }
 
     function mapLoop(now) {
