@@ -1129,3 +1129,31 @@ body.debug.show-thumb .debug-badge { bottom: calc(84px + env(safe-area-inset-bot
   .ub-skel { opacity: 0 !important; }
   .im-typing { display: none !important; }
 }
+
+/* ============================================================
+   LANGUAGE SWITCHER
+   ============================================================ */
+.lang-switch {
+  position: fixed; top: 14px; right: 16px; z-index: 101;
+  display: flex; gap: 2px; padding: 4px;
+  background: rgba(0, 0, 0, 0.72); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--hairline); border-radius: 100px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+.lang-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500; letter-spacing: 0.03em;
+  color: var(--text-2); padding: 6px 11px; border-radius: 100px;
+  transition: background 0.25s, color 0.25s;
+}
+.lang-btn .flag { font-size: 12px; line-height: 1; }
+.lang-btn:hover { color: var(--text); }
+.lang-btn.is-active { background: var(--lime); color: #05060A; font-weight: 600; }
+.lang-switch.busy { opacity: 0.6; pointer-events: none; }
+
+@media (max-width: 560px) {
+  .lang-switch { top: auto; bottom: calc(72px + env(safe-area-inset-bottom)); right: 12px; }
+  .lang-btn { padding: 6px 9px; font-size: 10px; }
+  .lang-btn .flag { font-size: 11px; }
+}
+body:not(.show-thumb) .lang-switch { }

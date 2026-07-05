@@ -32,9 +32,9 @@
   tickClocks();
   setInterval(tickClocks, 30_000);
 
-  /* ---------- split-text engine ---------- */
-  $$(".split").forEach((el) => {
-    const words = el.textContent.trim().split(/\s+/);
+  /* ---------- split-text engine (reusable for i18n) ---------- */
+  const splitEl = (el, text) => {
+    const words = text.trim().split(/\s+/);
     el.textContent = "";
     words.forEach((word, i) => {
       const w = document.createElement("span");
@@ -47,7 +47,64 @@
       el.appendChild(w);
       if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
     });
+  };
+  $$(".split").forEach((el) => {
+    el.dataset.en = el.textContent.trim().replace(/\s+/g, " ");
+    splitEl(el, el.dataset.en);
   });
+
+  /* ---------- i18n: EN default, RU + UZ ---------- */
+  (() => {
+    const DICTS = (window.__I18N || { ru: {}, uz: {} });
+    const norm = (s) => s.trim().replace(/\s+/g, " ");
+    const HTMLSEL = [
+      ".island-menu a", ".hero-copy .lead", ".cta-row .btn", ".hero-hint",
+      ".ship-rows .row-title", ".section-sub", ".chapter-copy > p", ".chapter-meta li",
+      ".rail-label", ".rel-card > p:last-child", ".group-label", ".s-text b", ".s-text small",
+      ".stat-label", ".lab-text small", ".lib-text small", ".iap-text b", ".iap-text small",
+      ".iap-get span", ".footer p", ".im-bubble", ".im-name small", ".chip",
+    ].join(",");
+    const htmlEls = $$(HTMLSEL).map((el) => {
+      if (!el.dataset.en) el.dataset.en = norm(el.innerHTML);
+      return el;
+    });
+    const splitEls = $$(".split");
+
+    const apply = (lang) => {
+      const dict = lang === "en" ? null : DICTS[lang] || {};
+      htmlEls.forEach((el) => {
+        const en = el.dataset.en;
+        const t = dict ? dict[en] : null;
+        el.innerHTML = t != null ? t : en;
+      });
+      splitEls.forEach((el) => {
+        const en = el.dataset.en;
+        const t = dict ? dict[en] : null;
+        splitEl(el, t != null ? t : en);
+      });
+      document.documentElement.lang = lang;
+      // re-apply platform-aware store labels after RU/UZ overwrite (Android → Google Play)
+      if (typeof window.__syncStoreLabels === "function") window.__syncStoreLabels();
+    };
+
+    const btns = $$(".lang-btn");
+    const setActive = (lang) => btns.forEach((b) => {
+      const on = b.dataset.lang === lang;
+      b.classList.toggle("is-active", on);
+      b.setAttribute("aria-pressed", String(on));
+    });
+    const choose = (lang) => {
+      try { localStorage.setItem("lang", lang); } catch (_) {}
+      setActive(lang);
+      apply(lang);
+      announce(lang === "ru" ? "Язык: русский" : lang === "uz" ? "Til: o‘zbek" : "Language: English");
+    };
+    btns.forEach((b) => b.addEventListener("click", () => choose(b.dataset.lang)));
+
+    let saved = "en";
+    try { saved = localStorage.getItem("lang") || "en"; } catch (_) {}
+    if (saved !== "en" && DICTS[saved]) { setActive(saved); apply(saved); }
+  })();
 
   /* ---------- reveal observer (shared) ---------- */
   const revealIO = new IntersectionObserver(
