@@ -278,6 +278,7 @@
             <div class="ht-icons" aria-hidden="true">
               <i style="--ico:#FF9F0A"></i><i style="--ico:#0A84FF"></i><i style="--ico:#BF5AF2"></i><i style="--ico:#FF375F"></i>
               <i style="--ico:#64D2FF"></i><i style="--ico:#30D158"></i><i style="--ico:#FFD60A"></i><i style="--ico:#8A94A6"></i>
+              <i style="--ico:#FF6482"></i><i style="--ico:#5E5CE6"></i><i style="--ico:#FF9F0A"></i><i style="--ico:#40C8E0"></i>
             </div>
           </div>
           <div class="home-indicator" aria-hidden="true"></div>
@@ -354,6 +355,14 @@
               <span class="nas-pay">Совершить оплату&ensp;✓</span>
               <span class="nas-ok">Подтверждено · 15.11.2024 - 21:23</span>
             </div>
+            <div class="nas-card nas-card2" aria-hidden="true">
+              <span class="nas-chip"><i class="red"></i>С опозданием</span>
+              <div class="nas-grid">
+                <span class="nas-lbl">Договор №:</span><span class="nas-lbl r">Остаток долга:</span>
+                <b>2410JAK0002-CA</b><b class="r">$ 8 200</b>
+              </div>
+              <div class="nas-bar"><i class="red"></i></div>
+            </div>
             <nav class="nas-nav" aria-hidden="true">
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 11 12 4l9 7v9h-6v-6h-6v6H3z"/></svg><small>Главная</small></span>
               <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 4h10l3 4H4zM4 8v12h16V8M9 12h6"/></svg><small>Договора</small></span>
@@ -407,6 +416,8 @@
               <li class="d2 rich"><i aria-hidden="true"></i><div><span>Buy milk</span><small>2% reduced fat, the glass bottle</small><em><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9a6 6 0 0 1 12 0c0 5 2 6 2 6H4s2-1 2-6"/><path d="M10 19a2 2 0 0 0 4 0"/></svg>Today 18:00</em></div><b class="dl-av" aria-hidden="true">A</b></li>
               <li class="d3"><i aria-hidden="true"></i><div><span>Wash the fruits</span></div></li>
               <li class="d4 dl-new"><i aria-hidden="true"></i><div><span>Order drinking water</span></div></li>
+              <li class="done-static"><i aria-hidden="true"></i><div><span>Coffee beans</span></div></li>
+              <li><i aria-hidden="true"></i><div><span>Paper towels</span></div></li>
             </ul>
             <div class="dl-siri">
               <div class="siri-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -457,6 +468,14 @@
               <span class="ub-search">Быстрый поиск<b><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.2-4.2"/></svg></b></span>
             </div>
             <p class="ub-head">Результат <span>22</span></p>
+            <div class="ub-ad" aria-hidden="true">
+              <i class="ub-ad-tag">РЕКЛАМА</i>
+              <div class="ub-row">
+                <span class="ub-av av3">GR</span>
+                <span class="ub-who"><b>СП ООО GRAND ROAD</b><em class="ub-adsub">Спецтехника · бетон</em></span>
+                <span class="ub-call"><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg></span>
+              </div>
+            </div>
             <div class="ub-card c1">
               <div class="ub-skel" aria-hidden="true"><i class="sk-av"></i><i class="sk-l1"></i><i class="sk-l2"></i></div>
               <div class="ub-real">
@@ -692,6 +711,12 @@
           <small>betterplayer, cupertino_native, flutter_slidable, dio_retry — when a dependency breaks in production, I fork it and fix it instead of waiting.</small></span>
         <a class="lab-get mono" href="https://github.com/fliosan" target="_blank" rel="noopener" aria-label="Open source forks on GitHub">CODE ↗</a>
       </li>
+      <li class="lab-row reveal">
+        <span class="lab-ico" style="--ico:#40C8E0" aria-hidden="true">☀</span>
+        <span class="lab-text"><b>Weather <span class="beta-tag mono">NATIVE ANDROID</span></b>
+          <small>Kotlin weather app — Hilt DI, MVVM, Material, and live maps via OpenStreetMap / MapBox. My native-Android playground.</small></span>
+        <a class="lab-get mono" href="https://github.com/alphasoft99/Weather" target="_blank" rel="noopener" aria-label="Weather app on GitHub">CODE ↗</a>
+      </li>
     </ul>
     <p class="lab-foot mono reveal">github.com/alphasoft99 · github.com/fliosan</p>
   </div>
@@ -774,14 +799,35 @@
           <span class="lib-meta mono">REAL ESTATE · APP STORE ↗</span></span>
       </a>
 
-      <div class="lib-tile reveal">
-        <span class="lib-ico lib-glyph" style="--ico:#0A84FF" aria-hidden="true">S</span>
-        <span class="lib-text"><b>Schoolify <span class="beta-tag mono">IN REVIEW</span></b>
-          <small>The white-label school platform behind the Thompson apps — diary, grades, chat, tuition. v1.0 in App Store review.</small>
-          <span class="lib-meta mono">EDTECH · SHIPPING SOON</span></span>
+      <a class="lib-tile reveal" href="https://apps.apple.com/uz/app/ziyarat/id1669967016" target="_blank" rel="noopener">
+        <img class="lib-ico" src="/assets/apps/ziyarat-icon.webp" alt="" width="64" height="64" loading="lazy">
+        <span class="lib-text"><b>Ziyarat <span class="beta-tag mono">MY OWN</span></b>
+          <small>Pilgrimage-tourism guide for Uzbekistan (Surxondaryo) — sites, routes, useful info. Published under my own Apple account.</small>
+          <span class="lib-meta mono">TRAVEL · APP STORE ↗</span></span>
+      </a>
+
+      <div class="lib-tile lib-tile-wide reveal" data-trendys>
+        <img class="lib-ico" src="/assets/apps/trendys-icon.svg" alt="" width="64" height="64" loading="lazy">
+        <span class="lib-text"><b>Trendy&rsquo;s <span class="beta-tag mono">FASHION MARKETPLACE</span></b>
+          <small>Buy &amp; sell branded fashion (Zara, Prada, Nike, LV…) — a two-sided marketplace with separate Customer and Seller apps: catalog, cart, payments, seller storefront &amp; verification.</small>
+          <span class="lib-meta mono">E-COMMERCE · CUSTOMER + SELLER</span></span>
       </div>
 
-      <div class="lib-tile reveal">
+      <a class="lib-tile reveal" href="https://apps.apple.com/uz/app/taneesh-events-and-dating/id6752775073" target="_blank" rel="noopener">
+        <img class="lib-ico" src="/assets/apps/taneesh-icon.webp" alt="" width="64" height="64" loading="lazy">
+        <span class="lib-text"><b>Taneesh</b>
+          <small>Event-based dating — connections that start at real events in your city, not endless swiping.</small>
+          <span class="lib-meta mono">SOCIAL · APP STORE ↗</span></span>
+      </a>
+
+      <a class="lib-tile reveal" href="https://apps.apple.com/uz/app/starex-global-parcel-delivery/id1459518540" target="_blank" rel="noopener">
+        <img class="lib-ico" src="/assets/apps/starex-icon.webp" alt="" width="64" height="64" loading="lazy">
+        <span class="lib-text"><b>Starex Global</b>
+          <small>International parcel-delivery &amp; cargo forwarding — track shipments from global marketplaces to your door.</small>
+          <span class="lib-meta mono">LOGISTICS · APP STORE ↗</span></span>
+      </a>
+
+            <div class="lib-tile reveal">
         <img class="lib-ico" src="/assets/apps/goodzone-icon.webp" alt="" width="64" height="64" loading="lazy">
         <span class="lib-text"><b>Goodzone</b>
           <small>E-commerce app for the electronics retail chain — 50K+ Android installs in its day.</small>
