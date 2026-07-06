@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="160" height="160">
+  <defs>
+    <linearGradient id="sx-underline" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#E75BAA"/>
+      <stop offset="0.45" stop-color="#7A6BD8"/>
+      <stop offset="1" stop-color="#39B6E9"/>
+    </linearGradient>
+  </defs>
+  <rect width="160" height="160" rx="36" fill="#1C2AA3"/>
+  <!-- star -->
+  <path fill="#ffffff" d="M42 50 L47.8 66.6 L64.9 66.9 L51.4 77.4 L56.3 93.8 L42 84 L27.7 93.8 L32.6 77.4 L19.1 66.9 L36.2 66.6 Z"/>
+  <!-- swoosh -->
+  <path d="M20 116 C 44 104, 68 84, 96 62" stroke="#ffffff" stroke-width="5.5" fill="none" stroke-linecap="round"/>
+  <!-- paper plane -->
+  <path fill="#ffffff" d="M96 63 L128 50 L112 68 L107 61 Z"/>
+  <!-- wordmark -->
+  <text x="38" y="118" font-family="Inter, 'Helvetica Neue', Arial, sans-serif" font-weight="900" font-style="italic" font-size="27" letter-spacing="-0.5">
+    <tspan fill="#ffffff">STAR</tspan><tspan fill="#A6CE39">EX</tspan>
+  </text>
+  <!-- gradient underline -->
+  <rect x="26" y="126" width="112" height="3" rx="1.5" fill="url(#sx-underline)"/>
+</svg>
