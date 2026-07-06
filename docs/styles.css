@@ -144,8 +144,14 @@ h3 { font-size: clamp(2rem, 4vw, 3.2rem); }
 }
 .phone-screen {
   position: relative; width: 100%; height: 100%;
-  border-radius: 44px; overflow: hidden; background: #0B0D12;
+  border-radius: 43px; overflow: hidden; background: #0B0D12;
+  /* iOS Safari: force clipping of transformed children (lockscreen/homescreen)
+     — otherwise composited layers ignore the rounded clip at the corners */
+  transform: translateZ(0);
+  isolation: isolate;
+  -webkit-mask-image: -webkit-radial-gradient(#fff, #000);
 }
+.lockscreen, .homescreen { border-radius: inherit; overflow: hidden; }
 .home-indicator {
   position: absolute; bottom: 5px; left: 50%; transform: translateX(-50%);
   width: 110px; height: 4px; border-radius: 4px; background: rgba(255, 255, 255, 0.35); z-index: 5;
@@ -1181,8 +1187,9 @@ body.debug.show-thumb .debug-badge { bottom: calc(84px + env(safe-area-inset-bot
 .lang-switch.busy { opacity: 0.6; pointer-events: none; }
 
 @media (max-width: 560px) {
-  .lang-switch { top: auto; bottom: calc(72px + env(safe-area-inset-bottom)); right: 12px; }
-  .lang-btn { padding: 6px 9px; font-size: 10px; }
-  .lang-btn .flag { font-size: 11px; }
+  .lang-switch { top: 12px; right: 10px; }
+  .lang-btn { padding: 7px 8px; font-size: 0; gap: 0; }
+  .lang-btn .flag { font-size: 14px; }
+  .island { transform: translateX(-62%); }
 }
 body:not(.show-thumb) .lang-switch { }
