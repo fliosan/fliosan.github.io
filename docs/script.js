@@ -95,6 +95,7 @@
       });
       document.documentElement.lang = lang;
       tickClocks();
+      if (typeof window.__renderIsland === "function") window.__renderIsland();
       // re-apply platform-aware store labels after RU/UZ overwrite (Android → Google Play)
       if (typeof window.__syncStoreLabels === "function") window.__syncStoreLabels();
     };
@@ -157,6 +158,14 @@
     a.addEventListener("click", () => { island.classList.remove("open"); islandPill.setAttribute("aria-expanded", "false"); })
   );
 
+  const trIsland = (label) => {
+    const lang = document.documentElement.lang || "en";
+    if (lang === "en") return label;
+    const d = (window.__I18N || {})[lang] || {};
+    return d[label] || label;
+  };
+  window.__renderIsland = () => { islandLabel.textContent = trIsland(currentLabel); };
+  window.__renderIsland();
   function setIsland(label, accent) {
     if (label === currentLabel) return;
     currentLabel = label;
@@ -164,7 +173,7 @@
     clearTimeout(swapTimer);
     swapTimer = setTimeout(() => {
       const w0 = islandPill.offsetWidth;
-      islandLabel.textContent = label;
+      islandLabel.textContent = trIsland(label);
       const w1 = islandPill.offsetWidth;
       if (!RM && Math.abs(w1 - w0) > 2) {
         islandPill.style.transition = "none";
