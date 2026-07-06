@@ -25,7 +25,16 @@
     const lockClock = $("#lock-clock");
     if (lockClock) lockClock.textContent = phoneTime;
     const lockDate = $("#lock-date");
-    if (lockDate) lockDate.textContent = now.toLocaleDateString("en-US", { weekday: "long", month: "long", day: "numeric" });
+    const L = document.documentElement.lang || "en";
+    if (lockDate) {
+      if (L === "uz") {
+        const wd = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"][now.getDay()];
+        const mo = ["yanvar", "fevral", "mart", "aprel", "may", "iyun", "iyul", "avgust", "sentabr", "oktabr", "noyabr", "dekabr"][now.getMonth()];
+        lockDate.textContent = `${wd}, ${now.getDate()}-${mo}`;
+      } else {
+        lockDate.textContent = now.toLocaleDateString(L === "ru" ? "ru-RU" : "en-US", { weekday: "long", month: "long", day: "numeric" });
+      }
+    }
     const tz = tashkentFmt.format(now);
     ["#tz-clock", "#tz-clock-2"].forEach((id) => { const el = $(id); if (el) el.textContent = tz; });
   }
@@ -63,6 +72,8 @@
       ".rail-label", ".rel-card > p:last-child", ".group-label", ".s-text b", ".s-text small",
       ".stat-label", ".lab-text small", ".lib-text small", ".iap-text b", ".iap-text small",
       ".iap-get span", ".footer p", ".im-bubble", ".im-name small", ".chip",
+      ".rel-card h3", ".notif-body", ".notif-time", ".unlock-hint", ".hs-greeting",
+      ".im-status", ".kicker", ".lab-text > b", ".marquee-track span", ".store-stars",
     ].join(",");
     const htmlEls = $$(HTMLSEL).map((el) => {
       if (!el.dataset.en) el.dataset.en = norm(el.innerHTML);
@@ -83,6 +94,7 @@
         splitEl(el, t != null ? t : en);
       });
       document.documentElement.lang = lang;
+      tickClocks();
       // re-apply platform-aware store labels after RU/UZ overwrite (Android → Google Play)
       if (typeof window.__syncStoreLabels === "function") window.__syncStoreLabels();
     };
