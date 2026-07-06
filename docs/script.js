@@ -168,7 +168,7 @@
   }
 
   const sectionLabels = [
-    [$("#hero"), "shahzod · online", null],
+    [$("#hero"), "Shakhzod · online", null],
     [$("#ship"), "what I ship", null],
     ...$$(".chapter").map((ch) => [ch, ch.dataset.island, getComputedStyle(ch).getPropertyValue("--app").trim()]),
     [$("#library"), "app library", null],
