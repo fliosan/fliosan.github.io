@@ -1193,3 +1193,6 @@ body.debug.show-thumb .debug-badge { bottom: calc(84px + env(safe-area-inset-bot
   .island { transform: translateX(-62%); }
 }
 body:not(.show-thumb) .lang-switch { }
+
+.sub-link { color: var(--lime); font-weight: 500; border-bottom: 1px solid transparent; transition: border-color .25s; }
+.sub-link:hover { border-bottom-color: var(--lime); }

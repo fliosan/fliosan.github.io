@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Case Studies — Shakhzod Abdujabborov, Flutter &amp; Mobile Developer</title>
+<meta name="description" content="Three real stories from 7 years of shipping mobile apps: winning a year-long App Store verification battle, growing a chores app past 500K downloads, and shipping one Flutter codebase to six platforms.">
+<meta name="theme-color" content="#05060A">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://fliosan.github.io/stories/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Shakhzod Abdujabborov">
+<meta property="og:title" content="Case Studies — how these apps actually got shipped">
+<meta property="og:description" content="A year-long App Store battle, 500K+ downloads, and one codebase on six platforms. Three stories from the trenches.">
+<meta property="og:url" content="https://fliosan.github.io/stories/">
+<meta property="og:image" content="https://fliosan.github.io/assets/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://fliosan.github.io/assets/og-cover.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2305060A'/%3E%3Ctext x='50' y='68' font-size='52' text-anchor='middle' fill='%23CCF836' font-family='Arial' font-weight='bold'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .story-wrap { padding: clamp(90px, 14vh, 150px) 0 0; }
+  .story-back { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--text-2); margin-bottom: 40px; transition: color .25s; }
+  .story-back:hover { color: var(--lime); }
+  .story-lede { color: var(--text-2); font-size: clamp(1rem, 1.5vw, 1.15rem); max-width: 640px; margin-top: 22px; }
+  .story { max-width: 760px; padding: clamp(56px, 9vh, 96px) 0; border-top: 1px solid var(--hairline); }
+  .story:first-of-type { border-top: none; }
+  .story-tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: var(--lime); margin-bottom: 18px; }
+  .story h2 { font-size: clamp(1.9rem, 4vw, 2.9rem); margin-bottom: 26px; }
+  .story h3 { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .12em; color: var(--text-3); text-transform: uppercase; margin: 34px 0 12px; }
+  .story p { color: var(--text-2); line-height: 1.75; margin-bottom: 16px; }
+  .story p b, .story li b { color: var(--text); font-weight: 600; }
+  .story ul { margin: 0 0 16px; display: grid; gap: 10px; }
+  .story li { color: var(--text-2); line-height: 1.7; padding-left: 22px; position: relative; }
+  .story li::before { content: "▸"; position: absolute; left: 0; color: var(--lime); font-size: 12px; top: 2px; }
+  .story-metrics { display: flex; flex-wrap: wrap; gap: 10px; margin: 28px 0 6px; }
+  .story-metric { border: 1px solid var(--hairline); border-radius: 100px; padding: 9px 18px; font-family: var(--font-mono); font-size: 11.5px; color: var(--text-2); }
+  .story-metric b { color: var(--lime); font-weight: 500; }
+  .pull { border-left: 2px solid var(--lime); padding: 4px 0 4px 20px; margin: 26px 0; font-size: 1.05rem; color: var(--text); font-weight: 500; line-height: 1.6; }
+  .story-cta { max-width: 760px; padding: clamp(48px, 8vh, 80px) 0 clamp(80px, 12vh, 130px); border-top: 1px solid var(--hairline); }
+  .story-cta h2 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); margin-bottom: 18px; }
+  .story-cta p { color: var(--text-2); margin-bottom: 28px; }
+</style>
+</head>
+<body data-widget="Scaffold">
+
+<main class="story-wrap">
+  <div class="container">
+    <a class="story-back" href="/">← Back to the portfolio</a>
+    <p class="kicker mono">CASE STUDIES</p>
+    <h1>Three stories from the trenches.</h1>
+    <p class="story-lede">Anyone can list technologies. These are the situations where shipping actually got hard —
+      a year-long fight with App Review, a chores app that crossed half a million downloads, and one codebase
+      that had to run on six platforms at once.</p>
+
+    <!-- ============ STORY 1 ============ -->
+    <article class="story">
+      <p class="story-tag">01 · APP STORE DIPLOMACY</p>
+      <h2>The year-long App Store battle we won</h2>
+
+      <div class="story-metrics">
+        <span class="story-metric">CLIENT · <b>AmediaTV / Anibla.uz</b></span>
+        <span class="story-metric">DURATION · <b>~12 months</b></span>
+        <span class="story-metric">OUTCOME · <b>★ 4.6, 500+ ratings</b></span>
+      </div>
+
+      <h3>The problem</h3>
+      <p>Anibla is Uzbekistan's first anime-dubbing streaming platform. The app was finished, tested and ready —
+        and App Review would not let it through. The rejection reason was not a bug or a crash: Apple could not verify
+        that we had the <b>rights to the brand and the content</b>, because the app name did not match the website domain
+        the account was associated with.</p>
+      <p>This is the kind of rejection that quietly kills products. There is no code change that fixes it,
+        the review thread resets with each new reviewer, and every resubmission costs another week.</p>
+
+      <h3>What I did</h3>
+      <ul>
+        <li>Treated it as an <b>evidence problem, not a code problem</b> — assembled a documentation trail proving the app belonged to the AmediaTV brand.</li>
+        <li>Kept a <b>single continuous thread with Apple Support</b> instead of opening fresh disputes, so context accumulated instead of resetting.</li>
+        <li>Escalated through the proper channels and kept the client informed with realistic timelines rather than optimistic ones.</li>
+        <li>Shipped every other part of the product in the meantime — including a <b>Flutter desktop build</b> — so the business kept moving while review was blocked.</li>
+      </ul>
+
+      <p class="pull">The app is live, rated 4.6 with 500+ ratings. The lesson: store approval is a relationship you
+        manage, not a checkbox you tick — and a developer who has done it before saves you months.</p>
+
+      <h3>Why it matters to you</h3>
+      <p>If your app touches licensed content, tracking, payments, or a brand you do not own outright,
+        review risk is a real project risk. I have been through it — including a separate migration from a personal
+        to a <b>business Apple Developer account</b> for a fintech app because of tracking requirements, and an
+        in-app-purchase dispute resolved by explaining local payment realities to Apple.</p>
+    </article>
+
+    <!-- ============ STORY 2 ============ -->
+    <article class="story">
+      <p class="story-tag">02 · WIDGETS, WATCH &amp; GROWTH</p>
+      <h2>How a chores app passed 500K downloads</h2>
+
+      <div class="story-metrics">
+        <span class="story-metric">PRODUCT · <b>HomeTasker</b></span>
+        <span class="story-metric">iOS · <b>★ 4.8, 2,800+ ratings</b></span>
+        <span class="story-metric">ANDROID · <b>500K+ installs</b></span>
+      </div>
+
+      <h3>The problem</h3>
+      <p>A household-chores app lives or dies by whether people remember it exists. Open-the-app-to-check-a-task
+        is friction, and friction is churn. The product needed to be present in the moments when a chore is
+        actually noticed — passing the kitchen, glancing at a wrist, unlocking a phone.</p>
+
+      <h3>What I built</h3>
+      <ul>
+        <li><b>Home-screen widgets on both iOS and Android</b> — small, medium and large, with tap-to-complete and an empty state that rewards a finished day instead of showing a blank box.</li>
+        <li>A native <b>Apple Watch app</b> — Today / All Tasks / Completed as a glanceable list, with task creation on the wrist.</li>
+        <li><b>Lock-screen widgets</b> so the next chore is visible before the phone is even unlocked.</li>
+        <li>Advanced Flutter animations in the main app, with the widget and watch layers written natively — <b>part Flutter, part native, one product</b>.</li>
+      </ul>
+
+      <p class="pull">Widgets turn a to-do app from a destination into an ambient presence. That is a retention
+        feature disguised as a UI feature.</p>
+
+      <h3>Why it matters to you</h3>
+      <p>Most Flutter developers stop at the app. Widgets, watch apps and live activities require dropping into
+        Swift/SwiftUI and Kotlin, and knowing where the platform boundary should sit. That boundary is where
+        retention lives — and it is exactly the work I have shipped repeatedly.</p>
+    </article>
+
+    <!-- ============ STORY 3 ============ -->
+    <article class="story">
+      <p class="story-tag">03 · ONE CODEBASE, SIX PLATFORMS</p>
+      <h2>Shipping one Flutter codebase to six platforms</h2>
+
+      <div class="story-metrics">
+        <span class="story-metric">ROLE · <b>Software Engineer &amp; Team Lead</b></span>
+        <span class="story-metric">COMPANY · <b>Sarafan LLC</b></span>
+        <span class="story-metric">PLATFORMS · <b>6 + watchOS</b></span>
+      </div>
+
+      <h3>The problem</h3>
+      <p>Leading development at Sarafan, the mandate was not "make an Android app." It was:
+        the same product, consistent behaviour, on <b>iOS, Android, Web, Windows, macOS and Linux</b> —
+        plus the Apple Watch — without maintaining six separate codebases or six separate teams.</p>
+
+      <h3>How it held together</h3>
+      <ul>
+        <li><b>Clean architecture with a hard layer boundary</b> — presentation (Cubit/BLoC with immutable freezed state), domain (entities, use cases, contracts), data (repositories, API clients). Platform specifics never leak upward.</li>
+        <li><b>CI/CD on Codemagic, Bitrise and Xcode Cloud</b> — automated builds and releases, with dev and prod flavors pointed at separate servers so testing never touched production data.</li>
+        <li><b>Firebase Remote Config as the release valve</b> — version gates and force-update prompts, so a bad build could be contained without waiting for store review.</li>
+        <li><b>Firebase across the stack</b> — Auth, Firestore, Realtime Database, Crashlytics, Messaging, Analytics — with offline mode and live chat built on top.</li>
+        <li><b>Growth wired in, not bolted on</b> — AppsFlyer and AppMetrica for deferred deep links and attribution, so marketing had real data from day one.</li>
+      </ul>
+
+      <p class="pull">Cross-platform is not a framework choice, it is an architecture discipline. Flutter makes it
+        possible; layered code and automated pipelines make it survivable.</p>
+
+      <h3>Why it matters to you</h3>
+      <p>If you need desktop and mobile, or a watch companion, or a codebase your future team can grow into
+        rather than rewrite — that is the same problem, and I have led it end to end.</p>
+    </article>
+
+    <!-- ============ CTA ============ -->
+    <section class="story-cta">
+      <h2>Let’s work together.</h2>
+      <p>If any of these stories sounds like the problem in front of you, the fastest next step is a conversation.
+        No pitch deck — just tell me about your users.</p>
+      <div class="cta-row">
+        <a href="mailto:shakhzodabdujabborov99@gmail.com" class="btn btn-primary">Email me</a>
+        <a href="/" class="btn btn-ghost">See the live demos</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Mobile development case studies by Shakhzod Abdujabborov",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "The year-long App Store battle we won" },
+    { "@type": "ListItem", "position": 2, "name": "How a chores app passed 500K downloads" },
+    { "@type": "ListItem", "position": 3, "name": "Shipping one Flutter codebase to six platforms" }
+  ]
+}
+</script>
+</body>
+</html>
